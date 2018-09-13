@@ -217,7 +217,7 @@ public class SystemConfig {
 		for (String id : re1.keySet()) {
 			//re1有 re2没有  delete
 			if( !re2.containsKey(id) ) {
-				delete.add(id+","+re1.get(id));
+				delete.add(re1.get(id));
 			}
 			//re1  re2都有   update
 			else {
@@ -237,7 +237,7 @@ public class SystemConfig {
 		for (String id : re2.keySet()) {
 			//re2有 re1没有  add
 			if( !re1.containsKey(id) ) {
-				add.add(id+","+re1.get(id));
+				add.add(re2.get(id));
 			}
 		
 				
