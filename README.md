@@ -16,8 +16,10 @@ tableName1=address<br>
 sql1=select name,tel,type from address<br>
 *需要比对的字段  全部应存在于 查询语句的 查询字段中*<br>
 paramName1=name,tel,type<br>
-*表中唯一字段 主键  应存在于 需要比对字段中*<br>
+*表中唯一字段   应存在于 需要比对字段中*<br>
 idParamName1=name<br>
+*表中主键，便于查询*<br>
+idIndexParam1=id
 *paramName1中第三个参数需要多值处理*<br>
 handleParamIndex1=3<br>
 *paramName1中第三个参数处理方式是将值按;分割   这里主要是处理某个字段里的值乱序排列的问题。*<br>

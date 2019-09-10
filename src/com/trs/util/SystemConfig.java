@@ -118,6 +118,7 @@ public class SystemConfig {
             sum1 = sum1 + tempreMap1.size();
             if (tempreMap1.size() < limit)
                 break;
+
         }
 
 
@@ -168,6 +169,7 @@ public class SystemConfig {
             sum2 = sum2 + tempreMap2.size();
             if (tempreMap2.size() < limit)
                 break;
+
         }
 
 

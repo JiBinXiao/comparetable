@@ -32,14 +32,14 @@ public class sqlHelper {
 			}
 			catch (SQLException e) {
 				
-				System.out.println("url:"+url+",database:"+database+",user:"+user+",password:"+password+"\t连接数据库参数有误，请检查");
+				System.out.println("url:"+url+"\ndatabase:"+database+"\nuser:"+user+"\npassword:"+password+"\n连接数据库参数有误，请检查");
 				
 			}
 	
 	}
 	
 	//执行查询，有返回集的
-	public  ResultSet excuteQuery(String sql,String parameters[]){
+	public  ResultSet excuteQuery(String sql, String parameters[]){
 		
 		try {
 			ps=ct.prepareStatement(sql);
