@@ -233,27 +233,22 @@ public class SystemConfig {
         for (String id : re1.keySet()) {
             //re1有 re2没有  delete
             if (!re2.containsKey(id)) {
-                delete.add(re1.get(id));
+                delete.add(id + "," + re1.get(id));
             }
             //re1  re2都有   update
             else {
-
                 String t1 = re1.get(id);
                 String t2 = re2.get(id);
-
                 if (!t1.equals(t2)) {
-
                     update.add(t1 + "\n" + t2 + "\n");
                 }
-
             }
 
         }
-
         for (String id : re2.keySet()) {
             //re2有 re1没有  add
             if (!re1.containsKey(id)) {
-                add.add(re2.get(id));
+                add.add(id+","+re1.get(id));
             }
 
 
@@ -283,6 +278,7 @@ public class SystemConfig {
         ResultSet rs = sqlHelper.excuteQuery(sql, null);
         try {
             while (rs.next()) {
+                //待读取的字段名称
                 String[] paramName = tparamName.split(",");
                 if (paramName.length > 0) {
                     String reString = "";
@@ -295,9 +291,9 @@ public class SystemConfig {
                         String sss = "";
                         if (tempsss != null)
                             sss = rs.getString(param).trim();
-
+                        //对比的字段序号
                         if (i == handleParamIndex - 1) {
-
+                            //splitString 拆分符号
                             String[] _sss = sss.split(splitString);
                             if (_sss.length > 0) {
                                 //对结果进行排序
